@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            window operation
+        </title>
+    </head>
+    
+    <body>
+      <div id="counter"></div>
+      <button id="btn">Click</button>
+       <!--<h1></h1>
+       <button onclick="window.history.forward();">Forward</button> 
+       <button onclick="window.history.back();">Back</button>
+-->    </body>
+    <script type="text/javascript">
+    /*    var c = window.history.length;
+         document.getElementsByTagName("h1")[0].innerText = c;
+
+    var x = Math.round(2.54973581);
+        document.write("<h1>"+ x + "</h1>");
+        alert(x); 
+        var y = 3.1;
+        document.write("<h1>"+Math.ceil(y)+"</h1>");
+        document.write("<h1>"+Math. floor(y)+"</h1>");
+        function otp(){
+            var q = Math.random()*10000;
+            document.write("<h2>"+Math.floor(q)+"</h2>");
+        }*/
+        var person = {FirstName : "Shubham",
+                     SecondName : "Kumar",
+                     FullName : function(){
+                         return this.FirstName + this.SecondName;
+                     }
+                     };
+        document.write("<h2>"+person.FullName()+"</h2>");
+    
+        var x = 0;
+        document.getElementById('btn').addEventListener("click",function(){
+            document.getElementById('counter').innerText = x;
+            x++;
+        })
+         
+        document.getElementById('btn').addEventListener("onmouseenter",colorchange());
+           function colorchange(){
+ document.getElementById('counter').style.color = "blue";
+            
+        }
+        document.getElementById('btn').addEventListener("mouseleave",colorgrey);
+        function colorgrey(){
+            document.getElementById('counter').style.color = "red";
+        }
+    </script></html>

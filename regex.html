@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regular Expressions</title>
+    </head>
+    
+    <style type="text/css">
+        label::after{
+            content: "*";
+        }
+        error{
+            font-size: 17px;
+            margin-top: 3px;
+            color: red;
+            display: block;
+        }
+        .password_check:after{
+            content: "";
+        }
+        .password_check{
+            display: flex;
+            color: deepskyblue;
+            font-weight: bold;
+        }
+    </style>
+    
+    <body>
+     <form action="#" method="post" onsubmit="return validate()">
+         <fieldset style="width: 200px; height: 450px;">
+            <legend>Registration Form</legend>
+             <p>
+                 <label for="username">Username</label><br/>
+                 <input id="username" name="username" type = "text"
+                 /><br/>
+             </p>
+             <p>
+                 <label for="password">Password</label><br/>
+                 <input id="password" name="password" type = "password"/><br/>
+             </p>
+             <p>
+                 <label for="confirm_password">Confirm Password</label><br/>
+                 <input id="confirm_password" name="confirm password" type ="password" onkeyup ="passcheck(this.value)" autocomplete ="off"/><br/>
+             </p>
+             <p>
+                <h6>Password should contain:</h6>
+                 <label class="password_check">8 Characters Long</label><br/>
+                 <label class="password_check">1 Lowercase character</label><br/>
+                 <label class="password_check">1 UpperCase Character</label><br/>
+                 <label class="password_check">1 Numerical Character</label><br/>
+                 <label class="password_check">1 Special Character</label><br/>
+             </p>
+             <p>
+                 <error id = "alert-caps"></error>
+                 <input type="submit" id="submit" value="submit"/>
+             </p>
+         </fieldset>
+     </form>   
+    </body>
+    
+    <script type="text/javascript">
+    /*var x = /[a-z][0-9]/i;
+    var str = "shubham2019";
+        console.log(x.exec(str));
+        console.log(x.test("sdhjhl2"));
+  var x = new RegExp('[0-9][A-Z]','img');
+        console.log(x.toString());*/
+        function passcheck(data){
+            var passclass = document.getElementsByClassName('password_check');
+         const lowercase = new RegExp('(?=.*[a-z])');
+            const uppercase = new RegExp('(?=.*[A-Z])');
+            const number = new RegExp('(?=.*[0-9])');
+            const specialchar = new RegExp('(?=.*[!@#\$%\^&\*])');
+            const eightchar = new RegExp('(?=.{8,})');
+            
+            if(eightchar.test(data)){
+                passclass[0].style.color = "green";
+            }else{
+                passclass[0].style.color ="grey";
+            }
+        }
+    </script>
+    
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number Validation</title>
+        <style type="text/css">
+            div{
+                border-bottom: 1px blue;
+                border-width: 100px; 
+            }
+        </style>
+    <script type="text/javascript">
+    var x = prompt("enter a number");
+        for(var i = 1; i <= 10; i++){
+            document.write("<div>");
+            document.write(x + "x" + i + "=" + i * x);
+            document.write("</div>");
+        }
+    </script>
+
+    </head>
+    <body>
+        <!--Enter Your Phone Number
+        <br/>
+        <input type="text" name="" onkeyup="val(this)">
+        <div id="res"></div>-->
+    </body>
+/*    <script type="text/javascript">*/
+        /*document.getElementById('res').style.color = "red";
+    function val(elem){
+        if(isNaN(elem.value)){
+           document.getElementById('res').innerText = "Please Enter a Number Only";
+        }else{
+            document.getElementById('res').innerText = " "; 
+            if(elem.value.length > 10){
+                document.getElementById('res').innerText = "Please Enter 10 digits Only";
+            }else{
+                document.getElementById('res').innerText = " ";
+            }
+        }
+        
+    }*/
+        </script>
+</html>

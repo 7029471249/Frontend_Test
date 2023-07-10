@@ -1,0 +1,9 @@
+.new{
+    width:inherit;
+    height: auto;
+    background-color: blueviolet;
+    align-content: stretch;
+    backface-visibility: visible;
+    text-align: center;
+    
+}

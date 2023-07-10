@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>getAttribute & setAttribute</title>
+</head>
+<style type="text/css">
+	.red{
+		color: red;
+	}
+	.blue{
+		color: blue;
+	}
+</style>
+<body>
+ <div id="test" class="red">Hello World!</div>
+ <button onclick="testing()">Click</button>
+</body>
+<script type="text/javascript">
+	var a = document.getElementById('test');
+	function testing(){
+		var s = a.getAttribute("class");
+		if(s == "red"){
+			a.setAttribute("class","blue");
+		}else{
+			a.setAttribute("class","red");
+		}
+	}
+</script>
+</html>
